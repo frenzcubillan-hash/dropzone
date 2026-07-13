@@ -1,38 +1,56 @@
 # Dropzone
 
-A private, local-first inbox for files, links, and notes. Dropzone keeps your library inside your browser using LocalStorage and IndexedDB—there is no account, database, or cloud file upload.
+Dropzone is a private, local-first inbox for saving files, links, and notes in one clean place.
 
-## Features
+It is made for the random-but-important stuff you do not want to lose: screenshots, project files, useful links, quick notes, ideas, references, and anything you want to keep close.
 
-- Drag-and-drop file storage on the current device
-- Notes and bookmarked links
-- Search, tags, filters, and favorites
-- Responsive desktop and mobile interface
-- Cloudflare Workers deployment through Vinext
+## ✨ What Makes It Exciting
 
-## Requirements
+- 📦 Drag and drop files directly into your personal inbox
+- 🔗 Save useful links and quick notes beside your files
+- 🏷️ Organize everything with tags, search, filters, and favorites
+- 🔒 Private by design: your saved data stays in your browser
+- ⚡ Fast, simple, and works without an account or database
+- 🌍 Deployable for free on Cloudflare Workers
 
-- Node.js 22.13 or newer
-- npm
+## 🧠 How It Works
 
-## Run locally
+Dropzone is hosted like a normal website, but your saved items are stored locally in your browser.
+
+That means Cloudflare serves the app, but it does not store your personal files. Files are saved in IndexedDB, while notes, links, tags, and favorites are saved in LocalStorage.
+
+Your data stays after refreshing the page, but it is tied to the browser, device, and website address you used.
+
+## 🛠️ Built With
+
+- React 19
+- TypeScript
+- Next.js 16
+- Vinext
+- Vite
+- Cloudflare Workers
+- Wrangler
+- LocalStorage
+- IndexedDB
+
+## 🚀 Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the local URL shown in the terminal. Changes update automatically while the development server is running.
+Open the local URL shown in your terminal.
 
-## Validate
+## ✅ Test
 
 ```bash
 npm test
 ```
 
-## Deploy to Cloudflare
+## ☁️ Deploy
 
-Authenticate once:
+Login to Cloudflare once:
 
 ```bash
 npx wrangler login
@@ -44,12 +62,8 @@ Then deploy:
 npm run deploy
 ```
 
-The deployment uses the free `workers.dev` address assigned to your Cloudflare account. Run the same command again whenever you want to publish an update.
+You can also connect the GitHub repo to Cloudflare so every push to `main` automatically builds and deploys the newest version.
 
-## Data and privacy
+## 🔐 Privacy Note
 
-Files are stored in IndexedDB. Notes, links, tags, favorites, and metadata are stored in LocalStorage. Data is separate for each browser and domain; clearing browser data removes the local library.
-
-## Technology
-
-React 19, TypeScript, Next.js 16, Vinext, Vite, and Cloudflare Workers.
+Dropzone does not upload your saved files to the cloud. If you clear your browser data, use private browsing, switch browsers, switch devices, or open a different domain, your local Dropzone library may not appear there.
